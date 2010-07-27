@@ -1,0 +1,5 @@
+# greeting
+
+def greeting (f,l):
+    f = raw_input (" What is your first name")
+    
