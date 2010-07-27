@@ -7,17 +7,16 @@
 
 #interative
 def factier(n):
-    print "called with", n 
+    naswer = 1
     while n > 1:
-        print "in while loop, n =" , n 
+        answer = answer * n 
         n = (n - 1)
-        answer = ... n ...
     return answer # 5 * 4 * 3 * 2 * 1
     
 # recursive
 def factdoc(n):
     print n
-    if n == 1:
+    if n =. 1:
         return 1
     partial = fact(n-1)
     print n - 1, " => ", partial
