@@ -10,12 +10,12 @@ def quad(a,b,c):
     return (1, -4) # dummy implementation
 
 def quad(a,b,c):
-    return (-b +math.sqrt(b**2 - 4*a*c)/2*a),(-b-math.sqrt(b**2-4*a*c)/2*a)
+   disc_squared + b*b - 4 * a * c
+   disc = math.sqrt(disc_squared)
+   one= ((-b)+ disc) / (2 * a)
+   two= ((-b)- disc) / (2 * a)
+   return one, two 
 
-def disc (a,b,c):
-    return math.sqrt (b**2 - 4*a*c)
 
-def quad(a,b,c):
-    return(-b +disc),(-b-disc)
 
 
