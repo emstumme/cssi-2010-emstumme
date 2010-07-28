@@ -11,3 +11,19 @@ def add_all(t):
 
 def is_anagram(s, t):
     """return True if s and t are anagrams"""
+    u = list(s)
+    v = list(t)
+    u.sort()
+    v.sort()
+    return u == v
+
+    
+    
+
+def test_is_anagram():
+    if not is_anagram("posts", "spots"):
+        is_anagram("shoes". "grass")):
+        print "is_anagram() is buggy!"
+
+if __name__ == "__main__":
+    test_is_anagram()
