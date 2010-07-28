@@ -19,3 +19,9 @@ def rsp():
     else:
         print "Player Two Wins"
     
+def get_choice():
+    x = raw_input("what does " = name1 + "choose?")
+    if x == "rock" or x == "scissors" x == "paper":
+        return x
+    print "you need to enter rock , paper or scissors:",x
+    get_choice()
