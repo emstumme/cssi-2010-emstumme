@@ -50,10 +50,10 @@ def find(word, letter):
         """Return the letter shifted by the value"""
         decimal = ord(letter)
         shifted = decimal + shift
-        if shifted > 122:
-            shifted = shifted - 26
-        elif shifted < 97:
-            shifted = shifted + 26
+        if shifted > 126:
+            shifted = shifted - 94
+        elif shifted < 32:
+            shifted = shifted + 94
         return chr(shifted)
 
     def rotate_word(original, shift):
@@ -64,6 +64,10 @@ def find(word, letter):
             rot = rotate_letter(c, shift)
             rotated = rotated + rot
         print rotated
-            
 
-        pass
+    def test_rotate_letter():
+        if (rotate_letter(' ', -1) != '~' or
+            if rotate_letter('~', 1) != ' '):
+            print "rotate_letter is buggy!"
+
+    
