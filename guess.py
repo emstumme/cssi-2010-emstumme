@@ -13,61 +13,19 @@ import random
 def guessee(maxvalue):
     """ Thinks of a number between 1 and maxvalue, inclusive,
 and responds to guesses about what the number is"""
-    answer = random.randint(1, maxvalue)     
-
-    guess == raw_input("Please enter your guess")
-    int()
-    n == answer
-    g == guess
+    answer = random.randint(1, maxvalue)
+    guessRight = False
+    guess = raw_input("Please enter your guess")
+    int(guess)
+    while guessRight == False:
+        n = answer
+        g = guess
     
-    if n > g:
+        if n > g:
             print ("Higher")
-    elif g > n:
-            print ("Lower")        
-    else:
-        print ("You win" )
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            guess = input("Guess Higher")
+        elif g > n:
+            print ("Lower")
+            guess = input("guess Higher")
+    else: 
+            print ("You win" )
