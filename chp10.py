@@ -21,9 +21,16 @@ def is_anagram(s, t):
     
 
 def test_is_anagram():
-    if not is_anagram("posts", "spots"):
-        is_anagram("shoes". "grass")):
+    if (not is_anagram("posts", "spots"):
+        is_anagram("shoes". "grass")) :
         print "is_anagram() is buggy!"
 
 if __name__ == "__main__":
     test_is_anagram()
+
+# random stuff
+
+def mystery(a, b):
+    a[0] = 'x'
+    b[1] = 'y'
+    
