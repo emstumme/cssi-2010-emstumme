@@ -47,3 +47,5 @@ t4 = Time(6, 56, 34)
 # Class.name(object, ...)
 #
 # Time.init(t3, ...)
+
+
