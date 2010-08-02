@@ -1,6 +1,9 @@
 
 # defines hangman, secret word, and amount of turns
 
+import random
+import string
+
 def hangman():
   print 'time to play hangman'
   secret_word = 'hello'
