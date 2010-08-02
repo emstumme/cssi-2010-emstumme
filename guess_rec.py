@@ -1,5 +1,5 @@
 import random
-import guessstate as gs
+import guessstate 
 
 def game_rec(maxvalue):
     """play the guessing game with the computer"""
@@ -13,9 +13,9 @@ def game_rec(maxvalue):
 
 def user_rec(state):
     """play the guessing game with the number"""
-    number = gs.get_number(state)
-    compwin = gs.get_compwin(state)
-    userwin = gs.get_userwin(state)
+    number = state.get_number()
+    compwin = state.get_compwin()
+    userwin = state.get_userwin()
     if userwin and compwin:
         print "game over"
     elif userwin:
@@ -36,10 +36,10 @@ def user_rec(state):
 
 def computer_rec(state):
     """Guess a number between low and high"""
-    low = gs.get_low(state)
-    high = gs.get_high(state)
-    compwin = gs.get_compwin(state)
-    userwin = gs.get_userwin(state)
+    low = state.get_low()
+    high = state.get_high()
+    compwin = state.get_compwin()
+    userwin = state.get_userwin()
     if userwin and compwin:
         print "game over"
     elif compwin:
@@ -50,10 +50,10 @@ def computer_rec(state):
         response = raw_input("Did I get it? ")
         if response == "yes":
             print "woo hoo"
-            gs.set_compwin_true(state)
+            gs.State.set_compwin_true(state)
             user_rec(state)
         elif response == "higher":
-            gs.set_low(state, guess + 1)
+            gs.State.set_low(state, guess + 1)
             user_rec(state)
         elif response == "lower":
             gs.set_high(state, guess - 1)

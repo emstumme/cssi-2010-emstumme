@@ -18,8 +18,25 @@
 #
 # We will use this API for both the recursive and iterative versions.
 
+class State(object):
+    """keep the state of the guessing game"""
+
+    def __init__(self, number, maxvalue):
+        """initial game state has a number and a maxvalue"""
+        self.number = number
+        self.low = 1
+        self.high = maxvalue
+        self.userwin = False
+        self.compwin = False
+        def __str__(self):
+            """Print the state as a string"""
+            return str((self.number, self.low, self.high.
+                        self.userwin, self.compwin))
+
 def create_state(number, maxvalue):
     """return an initial game state with the number and the upper bound"""
+    return State(number, maxvalue)
+    return s 
     return { "number" : number,
              "low" : 1,
              "high" : maxvalue,
@@ -28,36 +45,36 @@ def create_state(number, maxvalue):
 
 def get_number(state):
     """return the number that the user is trying to guess"""
-    return state["number"]
+    return state.number
 
 def get_low(state):
     """return the lower bound of the computer's guesses"""
-    return state["low"]
+    return state.low
 
 def get_high(state):
     """return the upper bound of the computer's guesses"""
-    return state["high"]
+    return state.high
 
 def get_compwin(state):
     """True iff the computer has won, False otherwise"""
-    return state["compwin"]
+    return state.compwin
 
 def get_userwin(state):
     """True iff the user has won, False otherwise"""
-    return state["userwin"]
-
+    return state.userwin
+                 
 def set_low(state, low):
     """Set the computer's lower bound"""
-    state["low"] = low
+    state.low = low
 
 def set_high(state, high):
     """Set the computer's upper bound"""
-    state["high"] = high
+    state.high = high
 
 def set_compwin_true(state):
     """Set the compwin condition to True"""
-    state["compwin"] = True
+    state.compwin = True
 
 def set_userwin_true(state):
     """Set the userwin condition to True"""
-    state["userwin"] = True
+    state.userwin = True
