@@ -1,0 +1,10 @@
+application: helloworld
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+-  url: /books.html
+   script: books.py
+-  url:/.*
+   script: hello_world.py
