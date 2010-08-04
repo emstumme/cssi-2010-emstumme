@@ -1,0 +1,12 @@
+# experiments
+
+def square(x):
+    return x * c
+
+def squares(n):
+    """return a list of the first n squares"""
+    results = []
+    for x in range(n):
+        sq = square(x)
+        results.append(sq)
+    return results

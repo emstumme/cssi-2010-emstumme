@@ -1,6 +1,7 @@
 # client.py
 
 import socket
+import sys 
 
 #client
 #
@@ -57,3 +58,16 @@ def run_client(host, port):
         data = s.recv(1024)# read info from the server
     client.finish()
     s.close #close socket
+
+if __name__ == "__main__":
+    # should be run as: python guess_server.py <port>
+    host = None
+    port = None
+    try:
+        host = sys.argv[1]  # host argument
+        port = int(sys.argv[2]) # get port argument
+    except:
+        print 'usage:', sys.argv[0], '<host> <port>'
+    if host and port:
+        run_client(host, port)
+    

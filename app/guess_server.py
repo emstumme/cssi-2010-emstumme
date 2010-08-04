@@ -1,6 +1,7 @@
 import random
 import server
-
+import sys 
+                       
 def run_guess_server(port):
     "run guessing game server on the port"""
     server.run_server(port, Server)
@@ -29,3 +30,12 @@ class Server(object):
         "finish up the guessing game"""
         print 'user used' + str(self.num_guesses) + 'guesses'
 
+
+if __name__ == "__main__":
+    # should be run as: python guess_server.py <port>
+    port = None
+    try:
+        port = int(sys.argv[1]) # get port argument
+    except:
+        print 'usage:', sys.argv[0], '<port>'
+    run_guess_server(port)
