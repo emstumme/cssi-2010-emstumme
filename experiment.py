@@ -60,24 +60,24 @@ def getletter(i, s):
     return s[i]
 
 u3 = map(getletter,
-         [2,4,1],
-         ["hello", "goodbye", "san francisco"]
+     [2,4,1],
+     ["hello", "goodbye", "san francisco"]
 
 indices = [2,4,1]
 strings = ["hello", "goodbye", "san francisco"]
 
 u4 = []
 for x in range(len(indices)):
-         c = getletter(indices[x], strings[x])
-         u4.append(c)
+    c = getletter(indices[x], strings[x])
+    u4.append(c)
 
 u5 = map(getletter, indices, strings)
 
 u6 = [getletter(indices[x], strings[x])
-      for x in range(len(indices))]
+    for x in range(len(indices))]
 
 def odd(x):
-         return x % 2 == 1
+    return x % 2 == 1
 
 u7 = filter(odd, range(10))
 
@@ -88,5 +88,13 @@ u9 = reduce(add, filter(odd, range(10))
 
 a, b = divmod(34, 12)
 
-            d = { i : "goodbye"[i] for i in range(len("goodbye")) )
-         
+d = { i : "goodbye"[i] for i in range(len("goodbye")) )
+            
+for x in dir(d):
+    if not x[0] == '_':
+        print x
+
+def odd1(x): return x % 2 == 1
+odd2 = lambda x: x % 2 == 1
+
+            
