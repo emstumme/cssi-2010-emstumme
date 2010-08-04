@@ -14,35 +14,9 @@ import socket # contains low-level network functions
 #       send a response to the client
 #final stuff
 
-import random 
-
-class Server(object):
-    """guessing game server"""
-
-    def startup(self):
-        """start a guessing game"""
-        self.x = random.randint(1,100)
-        self.num_guesses = 0
-        print '(our number is' + str(self.x) +')'
-
-    def process(self,data):
-        """process user input for guessing game"""
-        guess = int(data)
-        self.num_guesses += 1
-        if guess == self.x:
-            return "you won"
-        elif guess > self.x:
-            return "too high"
-        else:
-            return "too low"
-
-    def finish(self):
-        "finish up the guessing game"""
-        print 'user used' + str(self.num_guesses) + 'guesses'
-
-def handle_connection(conn, addr):
+def handle_connection(conn, addr, create):
     print 'connection recieved from:', addr
-    server = Server()
+    server = create()
     server.startup()
     while True:
         data = conn.recv(1024) # recv is like "read"
@@ -54,7 +28,7 @@ def handle_connection(conn, addr):
     server.finish()
     conn.close()
 
-def run_server(port):
+def run_server(port, create):
     """run our server on the given port"""
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     host = '' # all available netwrok interfaces
@@ -63,7 +37,7 @@ def run_server(port):
     print 'listening on port', port
     while True:
         conn, addr = s.accept() # accept a connection
-        handle_connection(conn, addr)
+        handle_connection(conn, addr, create)
     s.close() # can't ge there because of loop
    
     
