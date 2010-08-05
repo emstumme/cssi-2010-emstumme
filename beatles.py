@@ -12,7 +12,7 @@ class Goodbye(threading.Thread):
     # subclasses of Thread should define a run() function
     def run(self):
         """print goodbye"""
-        print 'goodbye'
+        for c in "hellodolly": print c 
 
 
 
@@ -22,5 +22,5 @@ def beatles():
     goodbye = Goodbye()
     hello.start()
     goodbye.start()
-    print 'beatles'
+    for x in range(10): print '*'
     

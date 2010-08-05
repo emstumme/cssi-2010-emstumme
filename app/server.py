@@ -1,6 +1,7 @@
 # server.py - run our web service
 
 import socket # contains low-level network functions
+import threading
 
 # general server processing
 #
@@ -12,7 +13,16 @@ import socket # contains low-level network functions
 #       if no data then we break out of that loop
 #       processing on that data
 #       send a response to the client
-#final stuff
+# final stuff
+
+class HandleConnection(threading.Thread):
+    def __init__(conn, add, create):
+        Thread.__init__(self)
+        self.conn = conn
+        self.add = add
+        self.create = create
+    def run(self):
+        handle_connection(self.conn, self.addr, self.create)
 
 def handle_connection(conn, addr, create):
     print 'connection recieved from:', addr
@@ -37,7 +47,9 @@ def run_server(port, create):
     print 'listening on port', port
     while True:
         conn, addr = s.accept() # accept a connection
-        handle_connection(conn, addr, create)
+        new_connection = HandleConnection(conn, addr, create)
+        new_conncection.start
+        # handle_connection(conn, addr, create)
     s.close() # can't ge there because of loop
    
     
