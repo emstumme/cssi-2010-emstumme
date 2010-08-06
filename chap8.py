@@ -1,5 +1,14 @@
 # Exercises from Chapter 8: Strings
 
+one = 'emily'
+two = 'stumme'
+
+def fullname(first, last):
+    return first + ' ' + last
+
+def fullname2(first, last):
+    return '%s %s' % (first, last)
+
 # Exercise 1
 # Write a  funstion that takes a string as an argument and displays
 # the letters backwards, one per line.
@@ -67,7 +76,7 @@ def find(word, letter):
 
     def test_rotate_letter():
         if (rotate_letter(' ', -1) != '~' or
-            if rotate_letter('~', 1) != ' '):
+            rotate_letter('~', 1) != ' '):
             print "rotate_letter is buggy!"
 
     

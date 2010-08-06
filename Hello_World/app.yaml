@@ -6,7 +6,7 @@ api_version: 1
 handlers:
 -  url: /books.html
    script: books.py
--  url: /.hello.html
+-  url: /hello.html
    script: hello_world.py
 -  url: /.*
    script: myapp.py
