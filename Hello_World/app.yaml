@@ -4,6 +4,8 @@ runtime: python
 api_version: 1
 
 handlers:
+-  url: /images
+   statuc_dir: artwork
 -  url: /books.html
    script: books.py
 -  url: /hello.html
